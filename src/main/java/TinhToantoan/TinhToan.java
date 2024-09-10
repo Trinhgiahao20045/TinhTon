@@ -6,6 +6,8 @@ package TinhToantoan;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -50,8 +52,47 @@ public class TinhToan extends JFrame {
         add(p1,BorderLayout.CENTER);
         add(p2,BorderLayout.SOUTH);
 
+        //tiep nhan su kien cong
+        btcong.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed (ActionEvent e){
+                double x= Double.parseDouble(txt1.getText());
+                double y= Double.parseDouble(txt2.getText());
+                double kq= x+y;
+                txt3.setText(String.valueOf(kq));
+            }
+        });
         
-        
+        //tiep nhan su kien tru
+        bttru.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed (ActionEvent e){
+                double x= Double.parseDouble(txt1.getText());
+                double y= Double.parseDouble(txt2.getText());
+                double kq= x-y;
+                txt3.setText(String.valueOf(kq));
+            }
+        });
+        //tiep nhan su kien nhan
+        btnhan.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed (ActionEvent e){
+                double x= Double.parseDouble(txt1.getText());
+                double y= Double.parseDouble(txt2.getText());
+                double kq= x*y;
+                txt3.setText(String.valueOf(kq));
+            }
+        });
+        //tiep nhan su kien chia
+        btchia.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed (ActionEvent e){
+                double x= Double.parseDouble(txt1.getText());
+                double y= Double.parseDouble(txt2.getText());
+                double kq= x/y;
+                txt3.setText(String.valueOf(kq));
+            }
+        });
     }
     public static void main(String[] args) {
         TinhToan frm= new TinhToan();
